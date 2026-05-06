@@ -1,12 +1,14 @@
-public class GreetingApp {
-    public static void main(String[] args) {
+public static boolean isValidMove(char[][] board, int row, int col) {
 
-        if (args.length == 0) {
-            System.out.println("Hello, World!");
-        } else {
-            for (String name : args) {
-                System.out.println("Hello, " + name + "!");
-            }
-        }
+    // Check bounds
+    if (row < 0 || row > 2 || col < 0 || col > 2) {
+        return false;
     }
+
+    // Check if cell is empty
+    if (board[row][col] != '-') {
+        return false;
+    }
+
+    return true;
 }
